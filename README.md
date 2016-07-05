@@ -1,2 +1,0 @@
-# shareview.site
-shareview site
