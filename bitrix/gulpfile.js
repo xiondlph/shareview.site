@@ -52,6 +52,7 @@ gulp.task('sync', function () {
 gulp.task('watchers', function() {
     gulp.watch(src + 'styles/**/*.scss', ['sass']);
     gulp.watch(src + 'js/**/*.*', ['js']);
+    gulp.watch(src + 'templates/**/*.html', ['html']);
 });
 
 gulp.task(
