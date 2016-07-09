@@ -1,0 +1,16 @@
+@import "icons";
+
+
+.shareview-yandex {
+
+
+  .bluring {
+    filter: blur(2px);
+  }
+
+
+  @import "animate";
+  @import "loading";
+  @import "field";
+  @import "base";
+}
