@@ -13,4 +13,14 @@
   @import "loading";
   @import "field";
   @import "base";
+
+
+  &__header {
+    border: 1px solid #e7e3e7;
+    padding: 20px;
+
+    h1 {
+      text-align: center;
+    }
+  }
 }
