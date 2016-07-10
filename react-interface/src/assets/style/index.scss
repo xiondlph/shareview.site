@@ -1,26 +1,110 @@
-@import "icons";
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-green: #878787;
+$color-red: #f80000;
+$item-padding: 20px;
+$border-width: 1px;
 
+.shareview-interface {
+  font: 13px/1.5 PT Sans,Verdana,sans-serif,sans-serif;
+  vertical-align: baseline;
+  position: relative;
+  display: block;
+  color: $color-black;
+  border: none;
+  padding: 0;
+  outline: 0;
+  margin: 0;
 
-.shareview-yandex {
+  .sry {
+    &__reviews {
+      padding: $item-padding 0;
+    }
 
+    &__reviews-item {
+      background: $color-white;
+      padding: 0 0 $item-padding 0;
+      margin: 0 0 $item-padding 0;
+      border-bottom: $border-width solid $color-green;
 
-  .bluring {
-    filter: blur(2px);
-  }
+      &:last-child {
+        border-bottom: 0 none;
+        padding-bottom: 0;
+      }
 
+      &__author {
+        margin-bottom: 18px;
 
-  @import "animate";
-  @import "loading";
-  @import "field";
-  @import "base";
+        &-name {
+          font-size: 15px;
+          line-height: 0;
+          vertical-align: middle;
+          color: #2b2b2b;
 
+          &:first-letter {
+            text-transform: uppercase;
+            color: $color-red;
+          }
+        }
 
-  &__header {
-    border: 1px solid #e7e3e7;
-    padding: 20px;
+        &-grades {
+          font-size: 11px;
+          line-height: 0;
+          margin-left: 20px;
+          vertical-align: middle;
+          color: $color-green;
+        }
+      }
 
-    h1 {
-      text-align: center;
+      &__header {
+        margin-bottom: 10px;
+
+        span {
+          font-size: 11px;
+          margin-right: 20px;
+          vertical-align: middle;
+          color: $color-green;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        &-assessment {
+          .star {
+            display: inline-block;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAQAAAD4zq+ZAAABdElEQVQoz3XSTUsCQRgH8C2IUiGlPNWpIL0EXQRFs1unToXeunYJutU1IugY3fsCfYZOHQLRncfEItM2TYpCbF13ZmdnfavJd3ex+J9mfsPM8zyMwIVRbmbE07TDvCOYF3DwytHRPwxTmQptPRNp+k8W92RW5TKDfStPxBZRSNzNlHFd5WojK0M04UvMdzl5lWt+1ktGmamGynE7iv5FSvSjnqvBpQBRiZG6wqu8h4RrnHKdU1rUxd32BWjzSceGFQnJU9jqlwb+R4IpGSHOasmwqXJ0odABMq5idG5pLBVX9Q4aDcYNTrSHWwtnGW1phoyzP7LCKPuWiInR8lsTkwyGQ3DDcUbDlffm3cKQEz6oorP4bH+4bnQBWmJtyDFbPADO0ShTLjEYs414TooUd8APdi5cO+KB4rYU6R3v8slkIaxtKKH8Olp9CVWCzXAhzCdMld8vEw/x1jx4peapeYknvWRpDOyKs+oaRHF2nhn7LeP5BXfbf2VGnTeBAAAAAElFTkSuQmCC) no-repeat 0 0;
+            width: 15px;
+            height: 20px;
+            margin-bottom: -6px;
+            margin-right: 2px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &--yellow {
+              background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAYAAABSx2cSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADdYAAA3WAZBveZwAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAKjSURBVDhPlZRLSFRRGMe/LMp8NURBj0VCEpOooKiY5lgghYpSpD3MYiKICloErVq5blOtgwIXLYzQ8Y6vxHmYk+aMjg4qEkamUBITQZTzOuf8++7gvHQ2LX6cOf/7/3/fd+/ccwkAGTq9Bn1NYYD2RKz0GBplxbStvoR5C2EL3ZWu05D99DDddZ20Iuy0S9iO+bHyCHKs+De6aXc63zZBR/TRDbVoDsGfA7VwMyytdCedL7Hppn0hC5UIjZrF6NF1tdoI+DOhVmogHSd+6nrISkXsy4mH5SB1KWdhUHouROTclYBaaNtQy+0C/lzgWybwhZ/XUrtQvmsB5b0aUu4WKR1FGzzdCxJW6pCu8pBaa412ivKDWWM+7wUWmVnmIxd5nwXlaYSaqI/wrdyLthcWapLOwoBa5QLfOfSVzZ+YeWaameCgg4PuBsjxqhB3vRwdOzY//6e1ypb/B8utCkscmGPcHBpnbIy7SQl7UTDSS/WxTDwcLaDRMyxeV/BycJIDTmaEsXLX6Q4V6aOnyf6UsBzM9qj5S4CLAw5+YK4KQMsD3mRDjbdADByYSvanhu0nA/BUAlN1ULO3InKsVGLGHMbIWcBSBuks/ZvsT4R7KF9Onhdq4YEQNmMgYqFOWOgIr0+kzRjE9H0hp5ol3tLhbeGwRpVSy9iQGj3HEO2P6VH66ZDopZdC2xnid740picMrygz3EcVGKbsuJbMAOXxFDX6aYtpiYt6N0dxG8aqW3nccr1YVOcjyUWrBOvCWXb5Vw/Fj2Ui3EkZcFWbMHOxDr7bJjhKaqG/y47CWszw/l1DHVwmE1t3bA8zwaGDBfCdM8Kea8SHU0b4zPz7jBGveT/M62jB8WR/Sni9i+/XazbAazDAvknPJrqe9FXRSQn/H6B/ONIofiZSwNoAAAAASUVORK5CYII=) no-repeat 0 0;
+            }
+          }
+        }
+      }
+
+      &__review {
+        padding-bottom: 10px;
+
+        &-title {
+          font-weight: 700;
+        }
+      }
+
+      &__date {
+        font-size: 11px;
+        line-height: 0;
+        color: $color-green;
+        padding-top: 10px;
+      }
+
     }
   }
 }

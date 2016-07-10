@@ -2,24 +2,23 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import Header from '../components/Header'
-
-import * as headerActions from '../actions/HeaderActions'
+import ReviewsList from '../components/ReviewsList'
+import * as reviewsListActions from '../actions/ReviewsListActions'
+import { text } from '../constants/reviews'
 
 class App extends Component {
     render() {
-        const {
-            header
-        } = this.props;
+        const { reviewsList } = this.props
+        const { reviews } = reviewsList
 
         return (
-            <div className='shareview-interface'>
-                <Header
-                    shopInfo={header.shopInfo}
-                    paymoLogo={header.paymoLogo}
-                    price={header.price}
-                    currencyText={header.currencyText}
-                />
+            <div className='shareview-interface sry'>
+                {reviews.length &&
+                <ReviewsList
+                    reviews={reviews}
+                />}
+                {!reviews.length &&
+                <div className='shareview-interface__not-reviews'>{text.notReviews}</div>}
             </div>
         )
     }
@@ -27,13 +26,13 @@ class App extends Component {
 
 function mapStateToProps (state) {
     return {
-        header: state.header
+        reviewsList: state.reviewsList
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        headerActions: bindActionCreators(headerActions, dispatch)
+        reviewsListActions: bindActionCreators(reviewsListActions, dispatch)
     }
 }
 
