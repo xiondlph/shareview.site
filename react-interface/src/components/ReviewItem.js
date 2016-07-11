@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { text } from '../constants/reviews'
 
+
 export default class ReviewItem extends Component {
     __gradeStars(grade) {
         let count = 5,
@@ -18,16 +19,23 @@ export default class ReviewItem extends Component {
     render() {
         const { review } = this.props
 
-        let grades = review.grades
+        let grades = review.grades,
+            gradesText = ''
+
+        if ( grades == 1 ) {
+            gradesText = text.gradesOne.replace(/\{(0)\}/i, grades)
+        } else if ( grades > 1 && grades < 5 ) {
+            gradesText = text.gradesMore.replace(/\{(0)\}/i, grades)
+        } else if ( grades > 1 && grades < 5 ) {
+            gradesText = text.grades.replace(/\{(0)\}/i, grades)
+        }
 
         return (
-            <div className='sry__reviews-item'>
+            <div className='sry__reviews-item animated flash'>
                 <div className='sry__reviews-item__author'>
                     <span className='sry__reviews-item__author-name'>{review.author}</span>
                     {grades>0 &&
-                    <span className='sry__reviews-item__author-grades'>{
-                        grades>1 ? text.grades.replace(/\{(0)\}/i, grades) : text.gradesOne.replace(/\{(0)\}/i, grades)
-                    }</span>}
+                    <span className='sry__reviews-item__author-grades'>{gradesText}</span>}
                 </div>
                 <div className='sry__reviews-item__header'>
                     <span className='sry__reviews-item__header-assessment'>
@@ -52,6 +60,7 @@ export default class ReviewItem extends Component {
         )
     }
 }
+
 
 ReviewItem.propTypes = {
     review: PropTypes.object.isRequired

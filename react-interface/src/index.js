@@ -9,9 +9,25 @@ import configureStore from './store/configureStore'
 
 const store = configureStore()
 
+let scriptDom = document.querySelector('script[data-id="shareview-interface"]'),
+    keywordText = scriptDom.getAttribute('data-keyword-text'),
+    tegId = scriptDom.getAttribute('data-keyword-id')
+
+keywordText = keywordText || ''
+tegId = tegId || ''
+
+scriptDom
+    .insertAdjacentHTML(
+        'beforeBegin',
+        '<div id="shareview-interface">Загружается...</div>'
+    )
+
 render(
     <Provider store={store}>
-        <App />
+        <App
+            keywordText={keywordText}
+            tegName={tegId}
+        />
     </Provider>,
     document.getElementById('shareview-interface')
 )

@@ -1,9 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import ReviewItem from './ReviewItem'
+import ReviewPagination from './ReviewPagination'
 
 export default class ReviewsList extends Component {
+    componentWillMount() {
+        const { setPagination, count, total } = this.props
+
+        setPagination(count, total)
+    }
+
     render() {
-        const { reviews } = this.props
+        const { reviews, pagination, page, url, loadReviews, keyword } = this.props
 
         return (
             <div className='sry__reviews'>
@@ -13,11 +20,30 @@ export default class ReviewsList extends Component {
                         review={review}
                     />
                 )}
+                {pagination &&
+                <ReviewPagination
+                    pagination={pagination}
+                    page={page}
+                    pageLoad={(pg)=>{
+                        if(pg != page) loadReviews(url, keyword, pg)
+                    }}
+                />}
             </div>
         )
     }
 }
 
 ReviewsList.propTypes = {
-    reviews: PropTypes.array.isRequired
+    reviews:        PropTypes.array.isRequired,
+
+    loadReviews:    PropTypes.func,
+    setPagination:  PropTypes.func,
+
+    url:            PropTypes.string,
+    keyword:        PropTypes.string,
+
+    page:           PropTypes.number,
+    pagination:     PropTypes.number,
+    count:          PropTypes.number,
+    total:          PropTypes.number
 }

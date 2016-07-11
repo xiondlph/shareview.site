@@ -2,6 +2,7 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-green: #878787;
 $color-red: #f80000;
+$color-yellow: rgb(255, 216, 61);
 $item-padding: 20px;
 $border-width: 1px;
 
@@ -16,9 +17,54 @@ $border-width: 1px;
   outline: 0;
   margin: 0;
 
+  @import "animate";
+  @import "loading";
+
+  .sry__loaded {
+    padding: 20px;
+    text-align: center;
+
+    &:before {
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+    }
+  }
+
   .sry {
     &__reviews {
       padding: $item-padding 0;
+
+      &__pagination {
+        text-align: center;
+
+        ul {
+          display: block;
+          margin: 0;
+          padding: 0;
+
+          li {
+            background-color: $color-white;
+            display: inline-block;
+            margin: 0 5px;
+            list-style: none;
+            border: 1px solid $color-yellow;
+            border-radius: 5px;
+            padding: 2px 5px;
+            cursor: pointer;
+
+            &:hover {
+              color: $color-yellow;
+            }
+
+            &.active {
+              background-color: $color-yellow;
+              color: $color-white;
+            }
+          }
+        }
+      }
     }
 
     &__reviews-item {
