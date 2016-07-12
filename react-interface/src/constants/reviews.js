@@ -2,6 +2,7 @@ export const LOAD_REVIEWS = 'LOAD_REVIEWS'
 export const SET_DATA = 'SET_DATA'
 export const SET_KEYWORD = 'SET_KEYWORD'
 export const SET_PAGINATION = 'SET_PAGINATION'
+export const UPDATE_LOADING = 'UPDATE_LOADING'
 
 export const text = {
     notReviews: 'По данному товару нет отзывов',

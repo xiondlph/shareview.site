@@ -1,5 +1,13 @@
-import { LOAD_REVIEWS, SET_KEYWORD, SET_PAGINATION } from '../constants/reviews'
+import { LOAD_REVIEWS, SET_KEYWORD, SET_PAGINATION, UPDATE_LOADING } from '../constants/reviews'
 import { getGetUrl, generateReviewsFromJSON } from '../scripts/api'
+
+
+export function updateLoading(bool) {
+    return {
+        type: UPDATE_LOADING,
+        payload: bool
+    }
+}
 
 export function setKeyword(text) {
     return {
@@ -27,6 +35,11 @@ export function loadReviews(url, keyword, page) {
     let urlGET = getGetUrl(url, keyword, page);
 
     return (dispatch) => {
+        dispatch({
+            type: UPDATE_LOADING,
+            payload: true
+        })
+
         fetch(urlGET, {
                 method: 'get',
                 headers: {

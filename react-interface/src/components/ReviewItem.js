@@ -31,7 +31,7 @@ export default class ReviewItem extends Component {
         }
 
         return (
-            <div className='sry__reviews-item animated flash'>
+            <div className='sry__reviews-item animated bounceInUp'>
                 <div className='sry__reviews-item__author'>
                     <span className='sry__reviews-item__author-name'>{review.author}</span>
                     {grades>0 &&

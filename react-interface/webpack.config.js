@@ -5,9 +5,9 @@ var autoprefixer = require('autoprefixer');
 
 
 module.exports = {
-  // devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
-    // 'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client',
     'babel-polyfill',
     './src/index'
   ],
@@ -23,7 +23,7 @@ module.exports = {
       }
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new NpmInstallPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }

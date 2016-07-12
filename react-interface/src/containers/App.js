@@ -17,9 +17,27 @@ class App extends Component {
     }
 
     render() {
-        const { reviewsList, reviewsListActions } = this.props;
-        const { reviews, loaded, page, count, total, pagination, url, keyword } = reviewsList;
-        const { loadReviews, setPagination } = reviewsListActions;
+        const {
+            reviewsList,
+            reviewsListActions
+        } = this.props;
+
+        const {
+            reviews,
+            loaded,
+            page,
+            count,
+            total,
+            pagination,
+            url,
+            keyword,
+            loading
+        } = reviewsList;
+
+        const {
+            loadReviews,
+            setPagination
+        } = reviewsListActions;
 
         return (
             <div className='shareview-interface sry'>
@@ -27,6 +45,7 @@ class App extends Component {
                 <div className='sry'>
                     {reviews.length &&
                     <ReviewsList
+                        loading={loading}
                         keyword={keyword}
                         url={url}
                         reviews={reviews}

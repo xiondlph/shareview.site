@@ -10,7 +10,7 @@ export default class ReviewsList extends Component {
     }
 
     render() {
-        const { reviews, pagination, page, url, loadReviews, keyword } = this.props
+        const { reviews, pagination, page, url, loadReviews, keyword, loading } = this.props
 
         return (
             <div className='sry__reviews'>
@@ -20,9 +20,9 @@ export default class ReviewsList extends Component {
                         review={review}
                     />
                 )}
-                {pagination &&
+                {pagination && page!=pagination &&
                 <ReviewPagination
-                    pagination={pagination}
+                    loading={loading}
                     page={page}
                     pageLoad={(pg)=>{
                         if(pg != page) loadReviews(url, keyword, pg)
@@ -41,6 +41,8 @@ ReviewsList.propTypes = {
 
     url:            PropTypes.string,
     keyword:        PropTypes.string,
+
+    loading:        PropTypes.bool,
 
     page:           PropTypes.number,
     pagination:     PropTypes.number,

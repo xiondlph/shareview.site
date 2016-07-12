@@ -49,6 +49,12 @@ $pulse-duration: 750ms;
   border: .25rem solid $off-white;
   border-top-color: $white;
   animation: spin $spin-duration infinite linear;
+
+  &--white {
+    border-color: #FFF;
+    border-top-color: $off-white;
+  }
+
   &--min {
     width: $base-line-height-min;
     height: $base-line-height-min;
