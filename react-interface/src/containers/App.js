@@ -9,11 +9,21 @@ import { text } from '../constants/reviews'
 
 class App extends Component {
     componentDidMount() {
-        const { reviewsListActions, keywordText, reviewsList } = this.props
-        const { setKeyword, loadReviews } = reviewsListActions
+        const { reviewsListActions, keywordText, reviewsList, url } = this.props
+        const { setMetaData, loadReviews, notReviews } = reviewsListActions
 
-        setKeyword(keywordText);
-        loadReviews(reviewsList.url, keywordText, reviewsList.page)
+        setMetaData({
+            keyword: keywordText,
+            url: url
+        });
+
+        if ( !keywordText || !url ) {
+            notReviews()
+        } else {
+            loadReviews(url, keywordText, reviewsList.page)
+        }
+
+
     }
 
     render() {

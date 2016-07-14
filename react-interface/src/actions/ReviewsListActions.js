@@ -1,4 +1,4 @@
-import { LOAD_REVIEWS, SET_KEYWORD, SET_PAGINATION, UPDATE_LOADING } from '../constants/reviews'
+import { LOAD_REVIEWS, SET_META_DATA, SET_PAGINATION, UPDATE_LOADING, NOT_REVIEWS } from '../constants/reviews'
 import { getGetUrl, generateReviewsFromJSON } from '../scripts/api'
 
 
@@ -9,10 +9,16 @@ export function updateLoading(bool) {
     }
 }
 
-export function setKeyword(text) {
+export function notReviews() {
     return {
-        type: SET_KEYWORD,
-        payload: text
+        type: NOT_REVIEWS
+    }
+}
+
+export function setMetaData(obj) {
+    return {
+        type: SET_META_DATA,
+        payload: obj
     }
 }
 
@@ -48,8 +54,6 @@ export function loadReviews(url, keyword, page) {
             })
             .then((response)=>response.json())
             .then(json => {
-                console.log(json);
-
                 dispatch({
                     type: LOAD_REVIEWS,
                     payload: generateReviewsFromJSON(json)

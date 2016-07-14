@@ -1,4 +1,4 @@
-import { LOAD_REVIEWS, SET_KEYWORD, SET_PAGINATION, UPDATE_LOADING } from '../constants/reviews'
+import { LOAD_REVIEWS, SET_META_DATA, SET_PAGINATION, UPDATE_LOADING, NOT_REVIEWS } from '../constants/reviews'
 
 const initialState = {
     page: 1,
@@ -6,7 +6,7 @@ const initialState = {
     count: 0,
     total: 0,
     keyword: '',
-    url: 'https://www.shareview.ru/review',
+    url: '',
     loaded: false,
     loading: false,
     reviews: []
@@ -25,14 +25,19 @@ export default function header(state=initialState, action) {
                 loading: false
             }
 
-        case SET_KEYWORD:
-            return {...state, keyword: action.payload}
+        case SET_META_DATA:
+            return {...state,
+                keyword: action.payload.keyword ? action.payload.keyword : action.keyword,
+                url: action.payload.url ? action.payload.url : action.url}
 
         case SET_PAGINATION:
             return {...state, pagination: action.payload}
 
         case UPDATE_LOADING:
             return {...state, loading: action.payload}
+
+        case NOT_REVIEWS:
+            return {...state, loaded: true, reviews: []}
 
         default:
             return state
