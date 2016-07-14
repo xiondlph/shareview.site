@@ -1,0 +1,47 @@
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700,900,300");
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFFFFF;
+  font-family: 'Open Sans',serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+a {
+  color: #3E84C2;
+  text-decoration: underline;
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:active, &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans',serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 0 25px 0;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
