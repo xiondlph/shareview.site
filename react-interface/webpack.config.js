@@ -22,6 +22,11 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
+    new webpack.ProvidePlugin({
+      Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      React: 'react'
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
     new NpmInstallPlugin(),
