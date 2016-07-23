@@ -1,0 +1,49 @@
+.top-panel {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.7);
+  border-color: #080808;
+  padding: 10px;
+  margin: 0;
+  z-index: 1000;
+
+  &:after {
+    @include before-clear();
+  }
+
+  &__logo {
+    float: left;
+  }
+
+  &__menu {
+    float: right;
+
+    .menu {
+      li {
+        margin: 0;
+        padding: 0;
+
+        a {
+          font-family: 'Comfortaa', cursive;
+          color: #ffffff;
+          font-weight: 400;
+          text-transform: lowercase;
+          padding: 7px 15px;
+          font-size: 13pt;
+          border-radius: 2px;
+          margin-left: 3px;
+          text-decoration: none;
+          letter-spacing: .12rem;
+
+          &:hover, &:focus, &.active {
+            background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+            outline: medium none !important;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

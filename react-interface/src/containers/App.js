@@ -53,7 +53,7 @@ class App extends Component {
             <div className='shareview-interface sry'>
                 {loaded &&
                 <div className='sry'>
-                    {reviews.length &&
+                    {reviews.length>0 &&
                     <ReviewsList
                         loading={loading}
                         keyword={keyword}

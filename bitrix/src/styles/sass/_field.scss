@@ -5,8 +5,8 @@ input[type="submit"] {
 }
 
 .button {
-  background-color: rgb(71, 164, 71);
-  border: 1px solid rgb(57, 132, 57);
+  background-color: $color-green;
+  border: 1px solid darken($color-green, 10%);
   border-radius: 6px;
   color: #fff;
   display: inline-block;
@@ -16,6 +16,7 @@ input[type="submit"] {
   padding: 1rem 2rem;
   text-decoration: none;
   cursor: pointer;
+  text-transform: uppercase;
 
   &:hover {
     background-color: #3276b1;

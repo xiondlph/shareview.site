@@ -1,0 +1,29 @@
+.menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &:after {
+    @include before-clear();
+  }
+
+  li {
+    display: block;
+    margin: 5px;
+    padding: 0;
+    list-style: none;
+
+    a {
+      text-transform: lowercase;
+      padding: 5px;
+      margin: 0;
+    }
+  }
+
+  &--horizontal {
+    li {
+      float: left;
+    }
+  }
+}

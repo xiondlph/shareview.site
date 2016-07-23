@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var cssmin = require('gulp-cssmin');
 var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
 
@@ -21,6 +22,7 @@ gulp.task('sass', function () {
             browsers: ['last 2 versions'],
             cascade: false
         }))
+        .pipe(cssmin())
         .pipe(gulp.dest(pub + 'css'))
         .pipe(browserSync.stream());
 });

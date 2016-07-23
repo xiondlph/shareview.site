@@ -54,10 +54,14 @@ export function loadReviews(url, keyword, page) {
             })
             .then((response)=>response.json())
             .then(json => {
+                if ( !Object.keys(json).length ) console.log(json)
+
                 dispatch({
                     type: LOAD_REVIEWS,
                     payload: generateReviewsFromJSON(json)
                 })
-            });
+            })
+            .catch(error => { console.error(error) });
+
     }
 }

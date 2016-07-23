@@ -9,7 +9,7 @@ export function getGetUrl(url, text, page) {
 
 export function generateReviewsFromJSON(object) {
     if ( !Object.keys(object).length || Object.keys(object).length && !object.hasOwnProperty('modelOpinions') ) {
-        console.log('generateReviewsFromJSON - bad data from SERVER', generateReviewsFromJSON);
+        console.info('generateReviewsFromJSON - bad data from SERVER', generateReviewsFromJSON);
         return Object;
     }
 
