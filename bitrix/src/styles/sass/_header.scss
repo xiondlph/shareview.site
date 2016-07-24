@@ -6,7 +6,7 @@
 
   .header {
     position: relative;
-    padding: 45px 0;
+    padding: 45px 0 0 0;
 
     &:after {
       @include before-clear();
@@ -27,11 +27,16 @@
 
       h1 {
         text-align: center;
+        span {
+          color: $color-yellow;
+          display: block;
+        }
       }
 
       p {
         width: 90%;
         margin: 0 auto;
+        color: darken(#FFFFFF, 15%);
       }
     }
 
@@ -62,13 +67,13 @@
           position: absolute;
           background-color: $color-green;
           border: 1px solid darken($color-green, 10%);
-          padding: 40px;
-          width: 300px;
+          padding: 20px;
+          width: 245px;
           font-size: 10px;
           line-height: 10px;
-          border-radius: 30px;
+          border-radius: 50px;
           opacity: 0.5;
-          top: 0;
+          top: -20px;
           left: 0;
 
           &:after {
@@ -76,9 +81,37 @@
             position: absolute;
             width: 0;
             height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 10px solid 1px solid darken($color-green, 10%);
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid darken($color-green, 10%);
+            right: 46px;
+            bottom: -16px;
+          }
+        }
+
+        .logo-review-answer {
+          position: absolute;
+          background-color: $color-yellow;
+          border: 1px solid darken($color-yellow, 10%);
+          padding: 20px;
+          width: 245px;
+          font-size: 10px;
+          line-height: 10px;
+          border-radius: 50px;
+          opacity: 0.5;
+          bottom: 133px;
+          right: 0;
+
+          &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid darken($color-yellow, 10%);
+            left: 46px;
+            top: -16px;
           }
         }
       }
@@ -89,6 +122,22 @@
 
       .button {
         margin: 60px 0 0 0;
+      }
+    }
+
+    &__discounts {
+      padding: 5px 0 40px 0;
+      text-align: center;
+      clear: both;
+
+
+      p {
+        font-size: 16px;
+        line-height: 16px;
+        color: $color_no_matter;
+        border-top: 1px solid $color-yellow;
+        margin: 0;
+        padding: 0;
       }
     }
   }

@@ -1,0 +1,29 @@
+.demo {
+  padding: 0 0 40px 0;
+
+  &-ulist {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: 0 20px;
+      list-style: none;
+
+      a {
+        font-size: 20px;
+        line-height: 50px;
+        text-decoration: none;
+        padding: 0 0 3px 0;
+        border-bottom: 1px solid;
+
+        &:hover {
+          border-color: $color-yellow;
+        }
+      }
+    }
+  }
+}

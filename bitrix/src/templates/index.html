@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favicon.png">
+
     <title>Shareview Bitrix Component</title>
+
+    <script src="https://use.fontawesome.com/6530bac4ad.js"></script>
     <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -15,19 +21,22 @@
                 <div class="container">
                     <div class="top-panel__logo">
                         <a class="logo" href="/">sha<span class="animated bounceIn">re</span>view</a>
+                        <span class="edition">Bitrix Component</span>
                     </div>
                     <div class="top-panel__menu">
-                        <ul class="menu menu--horizontal">
-                            <li><a href="#">Регистрация</a></li>
-                            <li><a href="#">Подключиться</a></li>
-                            <li><a href="#">Тарифы</a></li>
+                        <ul class="menu menu--horizontal js-linkToAnchorName">
+                            <li><a href="#connect">Подключиться</a></li>
+                            <li><a href="#tariffs">Тарифы</a></li>
+                            <li><a href="#demo">Демо</a></li>
+                            <li class="botton"><a href="#">Регистрация</a></li>
+                            <li class="botton"><a href="#">Вход</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="header__left">
-                    <h1>Готовые отзывы о товарах для интернет магазина</h1>
+                    <h1>Готовые отзывы о товарах для интернет магазина от <span>Яндекс.Маркет</span></h1>
                     <p>Shareview это надежный источник пользовательских отзывов о товарах для вашего интернет-магазина.
                         Мы собираем миллионы отзывов для десятков тысяч товаров, чтобы вы за пару минут могли опубликовать
                         их на своем сайте. Для этого вам достаточно только зарегистрироватся.</p>
@@ -39,19 +48,174 @@
                     <div class="logo-img">
                         <img src="images/logo2.svg" alt="Shareview" />
                         <span class="logo-review">•••••• •••••••••• ••••••••••••• ••• •••••••••••••••• •••••••••••••••• •••••••••• •••••• •••••••••••••••• ••••••• ••••••••• •••••••• ••••••••</span>
+                        <span class="logo-review-answer">•••••• •••••••••• ••••••••••••• ••• •••••••••••••••• •••••••••••••••• •••••••••• •••••• •••••••••••••••• ••••••• ••••••••• •••••••• ••••••••</span>
                     </div>
+                </div>
+                <div class="header__discounts hidden">
+                    <p>Первый 1000 зарегистрированных пользователи системы, получать 3 месяца
+                        бесплатного отзыва для каждого товара!</p>
                 </div>
             </div>
         </div>
     </header>
-    <section>
+    <a name="connect"></a>
+    <section class="connect">
         <div class="container">
-            <h1>Shareview Bitrix Component</h1>
+            <div class="pipe">
+                <h1>Как подключить отзывы на свой сайт</h1>
+                <p>После того как скачаете и поставите на свой сайт наш модуль для 1C-Bitrix:</p>
+                <div class="pipe__button">
+                    <a href="http://bitrix.ahrik.ru/" target="_blank" class="button button--link">модуль</a>
+                </div>
+            </div>
+            <div class="connect__blocks">
+                <div class="connect-item connect-item--registration">
+                    <div class="connect-item__icon">
+                        <i class="fa fa-at" aria-hidden="true"></i>
+                    </div>
+                    <div class="connect-item__title">
+                        <h3>Регистрация</h3>
+                    </div>
+                    <div class="connect-item__description">
+                        Простая и быстрая регистрация, уходить 1 минута :)
+                    </div>
+                    <div class="connect-item__button">
+                        <div class="button button--no-bg">Зарегистрироваться</div>
+                    </div>
+                </div>
+                <div class="connect-item connect-item--paying">
+                    <div class="connect-item__icon">
+                        <i class="fa fa-rub" aria-hidden="true"></i>
+                    </div>
+                    <div class="connect-item__title">
+                        <h3>Оплата</h3>
+                    </div>
+                    <div class="connect-item__description">
+                        Удобная и простая оплата. Тарифный план составили так, чтобы Вам было максимально удобно и выгодно. Стараемся :)
+                    </div>
+                    <div class="connect-item__button">
+                        <a href="#" class="button button--no-bg">Тарифы</a>
+                    </div>
+                </div>
+                <div class="connect-item connect-item--reviews">
+                    <div class="connect-item__icon">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    </div>
+                    <div class="connect-item__title">
+                        <h3>Отзывы</h3>
+                    </div>
+                    <div class="connect-item__description">
+                        Ура! Получаете отзывы от Яндекс Маркет. Пример можете посмотреть у нас на демо сайте.
+                    </div>
+                    <div class="connect-item__button">
+                        <a href="http://bitrix.ahrik.ru/" target="_blank" class="button button--no-bg">Демо</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <footer>
+    <a name="tariffs"></a>
+    <section class="tariffs">
         <div class="container">
-            <p>Copyright &copy; 2016</p>
+            <div class="pipe pipe--white pipe--center">
+                <h1>Тарифы</h1>
+                <p>Мы всегда открыты для иных предложение насчет сотрудничество, настроим и договримся как Вам удобно и выгодно!</p>
+            </div>
+            <div class="tariffs__blocks">
+                <div class="tariffs__items">
+                    <div class="tariffs__item tariffs__item--month">
+                        <div class="tariffs__item-header"><h3>1 месяц</h3></div>
+                        <div class="tariffs__item-time">
+                            <span>1 месяц = 500</span>
+                            <i class="fa fa-rub" aria-hidden="true"></i>
+                        </div>
+                        <div class="tariffs__item-get-list">
+                            <ul>
+                                <li><span>Отзывы на месяц</span></li>
+                                <li><span>Модуль для 1С-Битрик</span></li>
+                                <li><span>Личный кабинет</span></li>
+                            </ul>
+                        </div>
+                        <div class="tariffs__item-button">
+                            <span class="button">Заказать</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tariffs__items">
+                    <div class="tariffs__item tariffs__item--three-month">
+                        <div class="tariffs__item-header"><h3>3 месяц</h3></div>
+                        <div class="tariffs__item-time">
+                            <span>3 месяц = 1 200</span>
+                            <i class="fa fa-rub" aria-hidden="true"></i>
+                        </div>
+                        <div class="tariffs__item-get-list">
+                            <ul>
+                                <li><span>Все что из (1 месяц)</span></li>
+                                <li><span>Настройка модуля</span></li>
+                                <li><span>Консультирования</span></li>
+                            </ul>
+                        </div>
+                        <div class="tariffs__item-button">
+                            <span class="button">Заказать</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tariffs__items">
+                    <div class="tariffs__item tariffs__item--year">
+                        <div class="tariffs__item-header"><h3>1 ГОД</h3></div>
+                        <div class="tariffs__item-time">
+                            <span>1 ГОД = 3 600</span>
+                            <i class="fa fa-rub" aria-hidden="true"></i>
+                        </div>
+                        <div class="tariffs__item-get-list">
+                            <ul>
+                                <li><span>Все что из (3 месяц)</span></li>
+                                <li><span>Настройка модуля</span></li>
+                                <li><span>Консультирования</span></li>
+                            </ul>
+                        </div>
+                        <div class="tariffs__item-button">
+                            <span class="button">Заказать</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a name="demo"></a>
+    <section class="demo">
+        <div class="container">
+            <div class="pipe pipe--center">
+                <h1>Демо</h1>
+                <p>По ссылкам можете посмотреть как работает наш компонет.</p>
+            </div>
+            <ul class="demo-ulist">
+                <li><a target="_blank" href="http://bitrix.ahrik.ru/catalog/planshety/apple_ipad_air_2_128gb_wi_fi_cellular/">Apple iPad Air 2 128Gb Wi-Fi</a></li>
+                <li><a target="_blank" href="http://bitrix.ahrik.ru/catalog/planshety/samsung_galaxy_tab_a_8_0_sm_t355_16gb/">Samsung Galaxy Tab A 8.0 SM-T355 16Gb</a></li>
+                <li><a target="_blank" href="http://bitrix.ahrik.ru/catalog/smartfony/apple_iphone_6s_64gb/">Apple iPhone 6S 64Gb</a></li>
+                <li><a target="_blank" href="http://bitrix.ahrik.ru/catalog/smartfony/meizu_m3_note_32gb/">Meizu M3 Note 32Gb</a></li>
+                <li><a target="_blank" href="http://bitrix.ahrik.ru/catalog/planshety/huawei_mediapad_m2_8_0_lte_64gb/">Если не отзывы у товара в Яндекс.Маркет</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="footer__logo">
+                    <img src="images/logo2.svg" alt="Shareview" title="Shareview">
+                    <span>Copyright &copy; 2016</span>
+                </div>
+                <div class="footer__menu">
+                    <ul class="js-linkToAnchorName">
+                        <li><a href="#connect">Подключиться</a></li>
+                        <li><a href="#tariffs">Тарифы</a></li>
+                        <li><a href="#demo">Демо</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__ribbon">
+            <h4><a href="mailto:info@shareview.ru">info@shareview.ru</a></h4>
         </div>
     </footer>
 

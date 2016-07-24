@@ -4,8 +4,8 @@
   display: inline-block;
   text-decoration: none;
   color: #FFFFFF;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 28px;
+  line-height: 28px;
   outline: medium none !important;
   transition: all 0.5s ease;
 
@@ -18,30 +18,6 @@
     border-radius: 3px;
     text-transform: uppercase;
     position: relative;
-
-    /*&:before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-right: 5px solid darken($color-green, 10%);
-      border-bottom: 5px solid transparent;
-      left: -5px;
-      top: 1px;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-left: 5px solid darken($color-green, 10%);
-      border-bottom: 5px solid transparent;
-      right: -5px;
-      bottom: 1px;
-    }*/
   }
 
   &:hover {
@@ -56,5 +32,40 @@
 
   &--white {
     color: #FFFFFF;
+  }
+}
+
+.pipe {
+  position: relative;
+  padding: 40px 50px 25px 0;
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid $color-yellow;
+
+  &:after {
+    @include before-clear();
+  }
+
+  &__button {
+    position: absolute;
+    right: 0;
+    top: 40px;
+  }
+
+  h1 {
+    padding: 0 0 5px 0;
+    margin: 0;
+    color: darken($color-yellow, 15%);
+  }
+
+  &--white {
+    color: #FFFFFF;
+
+    h1 {
+      color: $color-yellow;
+    }
+  }
+
+  &--center {
+    text-align: center;
   }
 }
