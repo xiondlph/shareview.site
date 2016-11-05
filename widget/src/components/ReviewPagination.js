@@ -8,7 +8,7 @@ export default class ReviewPagination extends Component {
         return (
             <div className='sry__reviews__pagination'>
                 <span className='button' onClick={()=>{
-                    if ( !loading ) pageLoad(page+1)
+                    if ( !loading ) pageLoad(+page+1)
                 }}>Загрузить еще отзывов</span>
                 {loading &&
                 <span ref='buttonLoading' className='loader-block'>
