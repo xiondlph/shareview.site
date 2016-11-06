@@ -1,0 +1,71 @@
+.logo {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 28px;
+  line-height: 28px;
+  outline: medium none !important;
+  transition: all 0.5s ease;
+
+  span {
+    display: inline-block;
+    background-color: $color-green;
+    box-shadow: 0 0 1px 1px darken($color-green, 10%);
+    margin: 0 5px;
+    padding: 2px 3px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+
+    span {
+      background: #FFFFFF;
+      color: $color-green;
+    }
+  }
+
+  &--white {
+    color: #FFFFFF;
+  }
+}
+
+.pipe {
+  position: relative;
+  padding: 40px 50px 25px 0;
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid $color-yellow;
+
+  &:after {
+    @include before-clear();
+  }
+
+  &__button {
+    position: absolute;
+    right: 0;
+    top: 40px;
+  }
+
+  h1 {
+    padding: 0 0 5px 0;
+    margin: 0;
+    color: darken($color-yellow, 15%);
+  }
+
+  &--white {
+    color: #FFFFFF;
+
+    h1 {
+      color: $color-yellow;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+}

@@ -65,6 +65,10 @@ $border-width: 1px;
             right: -13px;
             border-width: 13px 0 13px 13px;
           }
+
+          &:hover {
+            color: #ffffff;
+          }
         }
 
         ul {
@@ -97,9 +101,18 @@ $border-width: 1px;
 
     &__reviews-item {
       background: $color-white;
-      padding: 0 0 $item-padding 0;
-      margin: 0 0 $item-padding+10px 0;
+      padding: 10px 0 $item-padding 0;
+      margin: 0 0 $item-padding 0;
       border-bottom: $border-width solid rgba(255, 216, 61, 0.5);
+
+      &:hover {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd83d+0,ffffff+100 */
+        background: rgb(255,216,61); /* Old browsers */
+        background: -moz-linear-gradient(-45deg,  rgba(255,216,61,0.1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg,  rgba(255,216,61,0.1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg,  rgba(255,216,61,0.1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd83d', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
 
       &:last-child {
         border-bottom: 0 none;
