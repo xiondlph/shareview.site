@@ -34,7 +34,7 @@ $border-width: 1px;
 
   .sry {
     &__reviews {
-      padding: $item-padding 0;
+      padding: $item-padding 0 $item-padding+20px 0;
 
       &__pagination {
         position: relative;

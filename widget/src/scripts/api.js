@@ -23,21 +23,38 @@ export function generateReviewsFromJSON(object) {
     if ( obj.hasOwnProperty('count') ) newObj['count'] = obj.count;
 
     if ( obj.hasOwnProperty('opinion') ) {
-        newObj.reviews = obj.opinion.map((item) => {
-            let newItem = {};
+        if ( obj.opinion.length ) {
+            newObj.reviews = obj.opinion.map((item) => {
+                let newItem = {};
 
-            if ( item.hasOwnProperty('id') ) newItem['id'] = item.id;
-            if ( item.hasOwnProperty('author') ) newItem['author'] = item.author;
-            if ( item.hasOwnProperty('date') ) newItem['date'] = dateParse(item.date);
-            if ( item.hasOwnProperty('grade') ) newItem['assessment'] = +item.grade + 3;
-            if ( item.hasOwnProperty('author-info') && item['author-info'].hasOwnProperty('grades') ) newItem['grades'] = item['author-info'].grades;
-            if ( item.hasOwnProperty('pro') ) newItem['dignity'] = item.pro;
-            if ( item.hasOwnProperty('contra') ) newItem['disadvantages'] = item.contra;
-            if ( item.hasOwnProperty('text') ) newItem['review'] = item.text;
-            if ( item.hasOwnProperty('usage-time') ) newItem['period'] = text['usage-time'][item['usage-time']];
+                if ( item.hasOwnProperty('id') ) newItem['id'] = item.id;
+                if ( item.hasOwnProperty('author') ) newItem['author'] = item.author;
+                if ( item.hasOwnProperty('date') ) newItem['date'] = dateParse(item.date);
+                if ( item.hasOwnProperty('grade') ) newItem['assessment'] = +item.grade + 3;
+                if ( item.hasOwnProperty('author-info') && item['author-info'].hasOwnProperty('grades') ) newItem['grades'] = item['author-info'].grades;
+                if ( item.hasOwnProperty('pro') ) newItem['dignity'] = item.pro;
+                if ( item.hasOwnProperty('contra') ) newItem['disadvantages'] = item.contra;
+                if ( item.hasOwnProperty('text') ) newItem['review'] = item.text;
+                if ( item.hasOwnProperty('usage-time') ) newItem['period'] = text['usage-time'][item['usage-time']];
 
-            return newItem;
-        });
+                return newItem;
+            });
+        } else {
+            let newItem = {},
+                opinionObj = obj.opinion;
+
+            if ( opinionObj.hasOwnProperty('id') ) newItem['id'] = opinionObj.id;
+            if ( opinionObj.hasOwnProperty('author') ) newItem['author'] = opinionObj.author;
+            if ( opinionObj.hasOwnProperty('date') ) newItem['date'] = dateParse(opinionObj.date);
+            if ( opinionObj.hasOwnProperty('grade') ) newItem['assessment'] = +opinionObj.grade + 3;
+            if ( opinionObj.hasOwnProperty('author-info') && opinionObj['author-info'].hasOwnProperty('grades') ) newItem['grades'] = opinionObj['author-info'].grades;
+            if ( opinionObj.hasOwnProperty('pro') ) newItem['dignity'] = opinionObj.pro;
+            if ( opinionObj.hasOwnProperty('contra') ) newItem['disadvantages'] = opinionObj.contra;
+            if ( opinionObj.hasOwnProperty('text') ) newItem['review'] = opinionObj.text;
+            if ( opinionObj.hasOwnProperty('usage-time') ) newItem['period'] = text['usage-time'][opinionObj['usage-time']];
+
+            newObj.reviews = [newItem];
+        }
     }
 
     return newObj;

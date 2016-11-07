@@ -20,7 +20,7 @@ export default class ReviewsList extends Component {
                         review={review}
                     />
                 )}
-                {pagination && page!=pagination &&
+                {pagination>0 && page!=pagination &&
                 <ReviewPagination
                     loading={loading}
                     page={page}
