@@ -32,11 +32,12 @@ export default class ReviewItem extends Component {
 
         return (
             <div className='sry__reviews-item animated bounceInUp'>
+                {review.author &&
                 <div className='sry__reviews-item__author'>
                     <span className='sry__reviews-item__author-name'>{review.author}</span>
                     {grades>0 &&
                     <span className='sry__reviews-item__author-grades'>{gradesText}</span>}
-                </div>
+                </div>}
                 <div className='sry__reviews-item__header'>
                     <span className='sry__reviews-item__header-assessment'>
                         {::this.__gradeStars(review.assessment).map((item)=>item)}
