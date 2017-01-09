@@ -4,25 +4,31 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+$botton-color: #f38b00;
+
 .button {
   background-color: $color-green;
-  border: 1px solid darken($color-green, 10%);
   border-radius: 6px;
   color: #fff;
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.063rem;
   line-height: 0.875rem;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1rem;
   text-decoration: none;
   cursor: pointer;
   text-transform: uppercase;
   outline: 0;
+  box-shadow: 0 0 0 1px darken($color-green, 10%);
+
+  &--opacity {
+    background: none;
+  }
 
   &:hover {
-    background-color: $color-blue;
-    border-color: $color-border-blue;
+    background-color: darken($color-green, 10%);
     color: #fff;
+    text-decoration: none;
   }
 
   &.disabled {

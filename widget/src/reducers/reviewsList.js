@@ -23,23 +23,23 @@ export default function header(state=initialState, action) {
                 count: action.payload.count ? action.payload.count : state.count,
                 loaded: true,
                 loading: false
-            }
+            };
 
         case SET_META_DATA:
             return {...state,
                 keyword: action.payload.keyword ? action.payload.keyword : action.keyword,
-                url: action.payload.url ? action.payload.url : action.url}
+                url: action.payload.url ? action.payload.url : action.url};
 
         case SET_PAGINATION:
-            return {...state, pagination: action.payload}
+            return {...state, pagination: action.payload};
 
         case UPDATE_LOADING:
-            return {...state, loading: action.payload}
+            return {...state, loading: action.payload};
 
         case NOT_REVIEWS:
-            return {...state, loaded: true, reviews: []}
+            return {...state, loaded: true, reviews: []};
 
         default:
-            return state
+            return state;
     }
 }

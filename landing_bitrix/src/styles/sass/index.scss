@@ -1,22 +1,23 @@
 /* Mixin */
-@import "mixins";
+@import "partials/include/mixins";
 
 /* Variable */
-@import "variables";
+@import "partials/include/fonts";
+@import "partials/include/variables";
 
 /* Base */
-@import "base";
+@import "partials/base/base";
 
 /* Elements */
-@import "animate";
-@import "field";
-@import "blocks";
-@import "menu";
-@import "top-panel";
+@import "partials/base/animate";
+@import "partials/base/field";
+
+/* Include */
+@import "partials/_blocks/logo";
+@import "partials/_blocks/authorization";
+@import "partials/include/component-demo-links";
 
 /* Containers */
-@import "header";
-@import "footer";
-@import "connect";
-@import "tariffs";
-@import "demo";
+@import "partials/include/top-menu";
+@import "partials/header";
+@import "partials/footer";
