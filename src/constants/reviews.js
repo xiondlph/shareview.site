@@ -14,7 +14,7 @@ export const text = {
     grades: 'Автор {0} отзывов',
     gradesOne: 'Автор {0} отзыв',
     gradesMore: 'Автор {0} отзыва',
-    'usage-time': {
+    'usageTime': {
         FEW_WEEKS: 'менее месяца',
         FEW_MONTHS: 'несколько месяцев',
         FEW_YEARS: 'более года'

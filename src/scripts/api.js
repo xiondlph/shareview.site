@@ -8,12 +8,12 @@ export function getGetUrl(url, text, page) {
 }
 
 export function generateReviewsFromJSON(object) {
-    if ( !Object.keys(object).length || Object.keys(object).length && !object.hasOwnProperty('opinion-list') ) {
+    if ( !Object.keys(object).length || Object.keys(object).length && !object.hasOwnProperty('modelOpinions') ) {
         console.info('generateReviewsFromJSON - bad data from SERVER', generateReviewsFromJSON);
         return Object;
     }
 
-    let obj = object['opinion-list'],
+    let obj = object['modelOpinions'],
         newObj = {
             reviews: []
         };
@@ -30,11 +30,11 @@ export function generateReviewsFromJSON(object) {
             if ( item.hasOwnProperty('author') ) newItem['author'] = item.author;
             if ( item.hasOwnProperty('date') ) newItem['date'] = dateParse(item.date);
             if ( item.hasOwnProperty('grade') ) newItem['assessment'] = +item.grade + 3;
-            if ( item.hasOwnProperty('author-info') && item['author-info'].hasOwnProperty('grades') ) newItem['grades'] = item['author-info'].grades;
+            if ( item.hasOwnProperty('authorInfo') && item.authorInfo.hasOwnProperty('grades') ) newItem['grades'] = item.authorInfo.grades;
             if ( item.hasOwnProperty('pro') ) newItem['dignity'] = item.pro;
             if ( item.hasOwnProperty('contra') ) newItem['disadvantages'] = item.contra;
             if ( item.hasOwnProperty('text') ) newItem['review'] = item.text;
-            if ( item.hasOwnProperty('usage-time') ) newItem['period'] = text['usage-time'][item['usage-time']];
+            if ( item.hasOwnProperty('usageTime') ) newItem['period'] = text.usageTime[item.usageTime];
 
             return newItem;
         });
